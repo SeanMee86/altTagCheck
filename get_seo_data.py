@@ -30,10 +30,10 @@ for item in output['pages']:
             
             if warning_separate[0] == 'Image missing alt tag':
                 src_separate = warning.split('src')
-                facebook_isolate = src_separate[1].split('/')
+                pixel_isolate = src_separate[1].split('/')
                 
-                if len(facebook_isolate) > 2:
-                    if facebook_isolate[2] != 'www.facebook.com':
+                if len(pixel_isolate) > 2:
+                    if pixel_isolate[2] != 'www.facebook.com' and pixel_isolate[2] != 'ct.pinterest.com':
                         warnings_arr.append(warning.replace("\"", "'"))
                 else:
                     warnings_arr.append(warning.replace("\"", "'"))
