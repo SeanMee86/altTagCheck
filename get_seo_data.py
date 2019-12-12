@@ -32,8 +32,12 @@ for item in output['pages']:
                 src_separate = warning.split('src')
                 facebook_isolate = src_separate[1].split('/')
                 
-                if facebook_isolate[2] != 'www.facebook.com':
+                if len(facebook_isolate) > 2:
+                    if facebook_isolate[2] != 'www.facebook.com':
+                        warnings_arr.append(warning.replace("\"", "'"))
+                else:
                     warnings_arr.append(warning.replace("\"", "'"))
+
                 
         if len(warnings_arr) > 0:
             data.append({"url": item['url'], "warnings": warnings_arr})
